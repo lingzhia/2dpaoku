@@ -1,0 +1,14 @@
+/* ...existing code... */
+#fetchScoreBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#scoreDisplay {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
