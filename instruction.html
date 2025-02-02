@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="instruction.css"> <!-- New CSS file -->
+</head>
+<body>
+    <h1>个人简历</h1>
+    <div class="button-container">
+        <button onclick="upload()">上传</button>
+        <button onclick="fetch()">获取</button>
+    </div>
+    <script>
+        function upload() {
+            alert('上传功能尚未实现');
+        }
+
+        function fetch() {
+            alert('获取功能尚未实现');
+        }
+    </script>
+    
+    <section>
+        <h2>个人信息</h2>
+        <div class="personal-info">
+            <h3>姓名：</h3>
+            <textarea placeholder="输入名字"></textarea>
+            <h3>性别：</h3>
+            <select>
+                <option value="" disabled selected>请选择性别</option>
+                <option value="male">男</option>
+                <option value="female">女</option>
+            </select>
+            <h3>年龄：</h3>
+            <input type="number" placeholder="请输入年龄" min="0" max="200">
+            <h3>电话：</h3>
+            <input type="tel" placeholder="请输入个人电话" pattern="[0-9]*">
+        </div>
+    </section>
+    <hr>
+
+    <section>
+        <h2>教育经历</h2>
+        <div class="education-info">
+            <h3>学校：</h3>
+            <textarea placeholder="输入学校名称"></textarea>
+            <h3>专业：</h3>
+            <textarea placeholder="输入专业名称"></textarea>
+            <h3>学历：</h3>
+            <select>
+                <option value="" disabled selected>请选择学历</option>
+                <option value="bachelor">本科</option>
+                <option value="master">硕士</option>
+                <option value="doctor">博士</option>
+            </select>
+            <h3>时间：</h3>
+            <input type="text" placeholder="输入时间范围">
+        </div>
+        <button onclick="addEducationRow()">新增</button>
+        <script>
+            function addEducationRow() {
+                const educationSection = document.querySelector('section:nth-of-type(2)');
+                const newRow = document.createElement('div');
+                newRow.className = 'education-info';
+                newRow.innerHTML = `
+                    <h3>学校：</h3>
+                    <textarea placeholder="输入学校名称"></textarea>
+                    <h3>专业：</h3>
+                    <textarea placeholder="输入专业名称"></textarea>
+                    <h3>学历：</h3>
+                    <select>
+                        <option value="" disabled selected>请选择学历</option>
+                        <option value="bachelor">本科</option>
+                        <option value="master">硕士</option>
+                        <option value="doctor">博士</option>
+                    </select>
+                    <h3>时间：</h3>
+                    <input type="text" placeholder="输入时间范围">
+                    <button onclick="removeEducationRow(this)">删除</button>
+                `;
+                educationSection.appendChild(newRow);
+            }
+
+            function removeEducationRow(button) {
+                const row = button.parentElement;
+                row.remove();
+            }
+        </script>
+    </section>
+    <hr>
+    
+    <section>
+        <h2>工作经历</h2>
+        <div class="work-experience">
+            <h3>公司名称：</h3>
+            <textarea placeholder="请输入公司名称"></textarea>
+            <h3>职位：</h3>
+            <textarea placeholder="请输入职位"></textarea>
+            <h3>时间：</h3>
+            <input type="text" placeholder="请输入时间范围">
+        </div>
+        <div class="work-content">
+            <h3>工作内容：</h3>
+            <textarea placeholder="请输入工作内容" oninput="autoResize(this)"></textarea>
+        </div>
+        <div class="work-skills">
+            <h3>工作技能：</h3>
+            <textarea placeholder="请输入工作技能" oninput="autoResize(this)"></textarea>
+        </div>
+        <script>
+            function autoResize(textarea) {
+                textarea.style.height = 'auto';
+                textarea.style.height = (textarea.scrollHeight) + 'px';
+            }
+        </script>
+    </section>
+    <hr>
+    
+    <section>
+        <h2>个人成果</h2>
+        <textarea placeholder="请输入个人成果" oninput="autoResize(this)"></textarea>
+    </section>
+    <hr>
+    
+    <section>
+        <h2>技能/证书</h2>
+        <textarea placeholder="请输入技能/证书" oninput="autoResize(this)"></textarea>
+    </section>
+    <hr>
+    
+    <section>
+        <h2>其他</h2>
+        <textarea placeholder="请输入其他信息" oninput="autoResize(this)"></textarea>
+    </section>
+    <hr>
+</body>
+</html>

@@ -1,0 +1,34 @@
+h1, h2 {
+    text-align: center;
+}
+
+section {
+    text-align: center;
+}
+
+.button-container {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.personal-info, .education-info, .work-experience {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.personal-info h3, .personal-info textarea, .personal-info select, .personal-info input,
+.education-info h3, .education-info textarea, .education-info select, .education-info input, .education-info button,
+.work-experience h3, .work-experience textarea, .work-experience input {
+    margin: 5px;
+    flex: 1 1 200px; /* Adjust the minimum width as needed */
+}
+
+textarea {
+    width: 100%;
+}
+
+textarea[placeholder="请输入工作内容"], textarea[placeholder="请输入工作技能"], textarea[placeholder="请输入个人成果"], textarea[placeholder="请输入技能/证书"], textarea[placeholder="请输入其他信息"] {
+    height: 2em;
+}
